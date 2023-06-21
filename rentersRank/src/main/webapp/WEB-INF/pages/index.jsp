@@ -28,6 +28,8 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 
 <title>Welcome to Renters' Rank!</title>
+<script src="https://ajax.googleapis.com/ajax/libs/cesiumjs/1.78/Build/Cesium/Cesium.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
 </head>
 	   
 <body>
@@ -68,8 +70,8 @@
 		<div class="container">
 			<div class="d-l-flex align-item-center">
 				<p class="lead my-5">	  
-				<img src="/images/property-search-icon-18.jpg" class="col-xs-6">
-				  We focus on creating fair space for ranters and 
+				<img src="/images/property-search-icon-18.jpg" class="xs-center col-xs-10 col-md-3 col-s-3 col-lg-6">
+				<br>⠀We focus on creating fair space for ranters and 
 				  landlords to excange quality and cheap housing with detailed
 				  information and photos, as well as <i>ratings from previous tenants.</i>
 				  Here, you can search for apartments and landlords in your desired location
@@ -82,8 +84,8 @@
 
 	  <section class="p-5">
 		<div class="container text-center">
-		  <div class="row g-5">
-			<div class="col-md ">
+		  <div class="row g-4">
+			<div class="col-lg">
 			  <div class="card bg-dark text-light h-100">
 				<div class="card-body text-left">
 				 	<div class="h1 sb-2 text-center">
@@ -93,84 +95,40 @@
 					Browse housing
 				  </h3>
 					<p class="card-text">
-						<form class="col-m">
 							<div class="row">
 
-							<label for="location" class="control-label col-xs-4 p-1 m-2">Location:</label>
-								<div class="col-xs-5">
+							<label for="location" class="control-label col-md-4 col-lg-3 col-xs-12 p-1 m-2">Location:</label>
+								<div class="col-md-4 col-lg-3 col-xs-12">
 									<input type="text" id="location" name="location">
 								</div>
 							</div>
 							
 							<div class="row">
-								<label class="control-label col-xs-4 p-1 m-2">Price range:</label>
-								<div class="col-xs-4"><input type="number" id="max-score" name="max-score" placeholder="Max"></div>
+								<label class="control-label col-md-4 col-lg-3 col-xs-12 p-1 m-2">Price range:</label>
+								<div class="col-md-4 col-lg-3 col-xs-12">
+									<input type="number" id="max-score" name="max-score" placeholder="Enter maximum price">
+								</div>
 							</div>
 							<div class="row">
-							<label class="control-label col-xs-4 p-1 m-2">Score:</label>
-							<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-							<p class="stars col-xs-7">
-							<span>
-								<a class="star-1" href="#">1</a>
-								<a class="star-2" href="#">2</a>
-								<a class="star-3" href="#">3</a>
-								<a class="star-4" href="#">4</a>
-								<a class="star-5" href="#">5</a>
-							</span>
-							</p> -->
-						</div>
-						<script>
-$('.ratings_star').click(function() {
-   $('.ratings_star').removeClass('selected'); // Removes the selected class from all of them
-   $(this).addClass('selected'); // Adds the selected class to just the one you clicked
-});
-						</script>
-						
-						<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-						<form> -->
-						  <!-- <div class="rating">
-							<label>☆
-							  <input type="radio" name="score" value="5" />
-							</label>
-							<label>☆
-							  <input type="radio" name="score" value="4" />
-							</label>
-							<label>☆
-							  <input type="radio" name="score" value="3" />
-							</label>
-							<label>☆
-							  <input type="radio" name="score" value="2" />
-							</label>
-							<label>☆
-							  <input type="radio" name="score" value="1" />
-							</label>
-						  </div> -->
-						<!-- </form> -->
-						
-						<input type="hidden" id="rating" name="rating" value="-1"> 
-						
-						<div class=rating>
-							<div class="ratings_stars" data-rating="1"></div>
-							<div class="ratings_stars" data-rating="2"></div>
-							<div class="ratings_stars" data-rating="3"></div>
-							<div class="ratings_stars" data-rating="4"></div>
-							<div class="ratings_stars" data-rating="5"></div> 
-						</div>
-						<script>$('.ratings_star').click(function() {
-							$('.ratings_star').removeClass('selected'); // Removes the selected class from all of them
-							$(this).addClass('selected'); // Adds the selected class to just the one you clicked
-						 
-							var rating = $(this).data('rating'); // Get the rating from the selected star
-							$('#rating').val(rating); // Set the value of the hidden rating form element
-						 });</script>
-						
+							<label class="control-label col-md-4 col-lg-3 col-xs-12 p-1 m-2">Score:</label>
+								<div class="col-md-4 col-lg-3 col-xs-12">
+								<ul class="rating">
+									<li class="rating-item" data-rate="1"></li>
+									<li class="rating-item" data-rate="2"></li>
+									<li class="rating-item active" data-rate="3"></li>
+									<li class="rating-item" data-rate="4"></li>
+									<li class="rating-item" data-rate="5"></li>
+									</ul>
+								</div>
+							</div>
 						<div class="text-center">
-						  <input type="submit" value="Search" a href="#" class="btn btn-primary center"></a></div>
-						</form>
+						  <input type="submit" value="Search" a href="#" class="btn btn-primary center"></a>
+						</div>
 					</p>
 				</div>
 			  </div>
 			</div>
+			
 			<div class="col-md ">
 			  <div class="card bg-dark text-light h-100">
 				<div class="card-body text-center">
@@ -194,11 +152,27 @@ $('.ratings_star').click(function() {
 		</div>
 	  </section>
 
+
+	<script>
+		const container = document.querySelector('.rating');
+		const items = container.querySelectorAll('.rating-item')
+		container.onclick = e => {
+		const elClass = e.target.classList;
+		// change the rating if the user clicks on a different star
+		if (!elClass.contains('active')) {
+		items.forEach( // reset the active class on the star
+		item => item.classList.remove('active')
+		);
+		console.log(e.target.getAttribute("data-rate"));
+		elClass.add('active'); // add active class to the clicked star
+		}
+		};
+	</script>
 	  <script
 	  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
 	  integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
 	  crossorigin="anonymous"
 	  ></script>
-	
+
 </body>
 </html>
